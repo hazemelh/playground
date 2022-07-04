@@ -17,35 +17,20 @@ The following table presents a side-by-side comparison between the features of L
 |LUIS features | Conversational language understanding features | Post migration |
 |:------------:|:----------------------------------------------:|:--------------:|
 |ML, Structured ML, List, Prebuilt, Regex, Pattern.Any Entities|ML, List, and Prebuilt [entity components](faq2). Regex components to be available in October 2022.|ML (leaf nodes), List, and Prebuilt entities will be transferred as entities in CLU; other entity types will not be transferred.| 
-
 |Single culture for each application|Multilingual model: multiple languages for each project (FAQ4)|The primary language of your project will be set as your LUIS application culture. Your project can be trained to extend to different languages.|
-
 |Entity Roles  |Roles no longer needed (FAQ3)  | Entity Roles will be transferred as entities.|
-
 |Normalize Punctuation, Normalize Diacritics, Normalize Word Form, Use All Training Data  |Settings no longer needed (FAQ6)  |Settings will not be transferred.  |
-
 |Patterns and Phrase list features|Patterns and Phrase list features no longer needed. (FAQ6)|Patterns and Phrase list features will not be transferred.  |
-
 |Entity features| Entity components (FAQ16)| List or Prebuilt entities added as features to an entity will be transferred as added components to that entity. Entity features will not be transferred for intents |
-
 |Intents and utterances| Intents and utterances |All intents and utterances will be transferred; utterances will be labeled with their transferred entities. |
-
 |Application GUIDs |Project names| A project will be created for each migrating application with the application name. |
-
 |Versioning| Can only be stored locally, will be available in October 2022 (FAQ7)| A project will be created for the selected application version. |
-
 |Evaluation using batch testing |Evaluation using testing sets| Uploading your testing dataset will be required.|  
-
 |LUIS Authoring APIs| CLU Authoring APIs| Learn more on how to use the CLU authoring APIs.| 
-
 |Role-Based Access Control (RBAC) for LUIS resources |Role-Based Access Control (RBAC) available for Language resources |Language resource RBAC must be manually added after migration. Learn more. |
-
 |Single training mode| Standard and advanced training modes (FAQ14)| Training will be required after application migration. |
-
 |Two publishing slots and version publishing |Ten deployment slots with custom naming|Deployment will be required after the application’s migration and training. |
-
 |LUIS Authoring SDK support in .NET, Python, Java, and Node.js |Unavailable| Learn more on how to use the CLU authoring APIs. Refactoring will be necessary to use the CLU authoring APIs. |
-
 |LUIS Runtime SDK support in .NET, Python, Java, and Node.js |CLU Runtime SDK support in .NET and Python| Learn more on how to use the CLU runtime SDKs and APIs. Refactoring will be necessary to use the CLU runtime API response. |
 
 
