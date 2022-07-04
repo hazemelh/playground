@@ -68,15 +68,15 @@ Follow these steps to begin migration programmatically using the CLU Authoring A
 
 3. Call your deployed model 
 
-##FAQ: Frequently asked questions 
+## FAQ: Frequently asked questions 
 
    
 
-1. Which LUIS JSON version is supported by CLU? 
+### 1. Which LUIS JSON version is supported by CLU? 
 
 CLU supports the model JSON version 7.0.0, therefore if the JSON format is older, it would need to be imported then exported from LUIS with the most recent version.  
 
-2. How are entities different in CLU? 
+### 2. How are entities different in CLU? 
 
 In CLU, a single entity can have multiple entity components which are different methods for extraction. Those components are then combined together using some rules you can define. The available components are Learned (equivalent to ML entities in LUIS), List, and Prebuilt. Regex components will be available October 2022. 
 
@@ -86,11 +86,11 @@ Example:
 
 LUIS entity: 
 
-..*Pizza Order  
+*Pizza Order  
 
-...*Topping  
+**Topping  
 
-...*Size  
+**Size  
 
 Migrated LUIS entity in CLU: 
 
