@@ -17,12 +17,16 @@ The following table presents a side-by-side comparison between the features of L
 |LUIS features | Conversational language understanding features | Post migration |
 |:------------:|:----------------------------------------------:|:--------------:|
 |ML, Structured ML, List, Prebuilt, Regex, Pattern.Any Entities|ML, List, and Prebuilt [entity components](faq2). Regex components to be available in October 2022.|ML (leaf nodes), List, and Prebuilt entities will be transferred as entities in CLU; other entity types will not be transferred.| 
+|Single culture for each application|Multilingual model: multiple languages for each project (FAQ4)|The primary language of your project will be set as your LUIS application culture. Your project can be trained to extend to different languages.|
+|Entity Roles  |Roles no longer needed (FAQ3)  | Entity Roles will be transferred as entities.|
 
-Single culture for each application 
 
-Multilingual model: multiple languages for each project (FAQ4) 
 
-The primary language of your project will be set as your LUIS application culture. Your project can be trained to extend to different languages. 
+
+
+
+
+
 
 
 
