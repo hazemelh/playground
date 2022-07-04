@@ -6,7 +6,12 @@ CLU offers the following advantages over LUIS:
 
 1. Improved accuracy with state-of-the-art machine learning models for better intent classification and entity extraction. 
 2. Multilingual support for model learning and training. 
-3. Ease of integration with different CLU and custom question answering projects using [orchestration workflow](), available in the [Language Studio](). 
+3. Ease of integration with different CLU and [custom question answering]() projects using [orchestration workflow](), available on the [Language Studio](). 
 4. The ability to add testing data easily within the experience using the Language Studio and APIs for model performance evaluation prior to deployment. 
 
 To get started you can [create a new project]() or [import your LUIS application](). 
+
+## Comparison between Language Understanding (LUIS) and conversational language understanding (CLU)
+The following table presents a side-by-side comparison between the features of LUIS and CLU; additionally, it highlights the changes to your LUIS application after migrating to CLU.
+
+|--|--|--|
