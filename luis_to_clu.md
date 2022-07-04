@@ -14,4 +14,15 @@ To get started you can [create a new project]() or [import your LUIS application
 ## Comparison between Language Understanding (LUIS) and conversational language understanding (CLU)
 The following table presents a side-by-side comparison between the features of LUIS and CLU; additionally, it highlights the changes to your LUIS application after migrating to CLU.
 
-|--|--|--|
+|LUIS features | Conversational language understanding features | Post migration |
+|:------------:|:----------------------------------------------:|:--------------:|
+|ML, Structured ML, List, Prebuilt, Regex, Pattern.Any Entities|ML, List, and Prebuilt [entity components](faq2). Regex components to be available in October 2022.|ML (leaf nodes), List, and Prebuilt entities will be transferred as entities in CLU; other entity types will not be transferred.| 
+
+Single culture for each application 
+
+Multilingual model: multiple languages for each project (FAQ4) 
+
+The primary language of your project will be set as your LUIS application culture. Your project can be trained to extend to different languages. 
+
+
+
