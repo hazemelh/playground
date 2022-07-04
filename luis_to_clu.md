@@ -33,6 +33,12 @@ The following table presents a side-by-side comparison between the features of L
 |LUIS Authoring SDK support in .NET, Python, Java, and Node.js |Unavailable| Learn more on how to use the CLU authoring APIs. Refactoring will be necessary to use the CLU authoring APIs. |
 |LUIS Runtime SDK support in .NET, Python, Java, and Node.js |CLU Runtime SDK support in .NET and Python| Learn more on how to use the CLU runtime SDKs and APIs. Refactoring will be necessary to use the CLU runtime API response. |
 
+## Migration Steps for your LUIS Applications
+You can choose to migrate your LUIS applications to the next generation service conversational language understanding programmatically using the Authoring APIs or using the LUIS portal.  
+
+Follow these steps to begin migration using the LUIS Portal: 
+
+1. After logging into luis.ai, click the button on the banner, shown below, to launch the migration wizard or select your LUIS applications from your library and use the migrate button, shown below to begin migrating your applications. Please note that migration will only copy your selected LUIS applications.  
 
 
 
