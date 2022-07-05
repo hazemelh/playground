@@ -33,9 +33,7 @@ The following table presents a side-by-side comparison between the features of L
 |LUIS Authoring SDK support in .NET, Python, Java, and Node.js |Unavailable| Learn more on how to use the [CLU authoring APIs](https://docs.microsoft.com/en-us/rest/api/language/conversational-analysis-authoring). Refactoring will be necessary to use the CLU authoring APIs. |
 |LUIS Runtime SDK support in .NET, Python, Java, and Node.js |CLU Runtime SDK support in [.NET](https://docs.microsoft.com/en-us/dotnet/api/overview/azure/ai.language.conversations-readme-pre?view=azure-dotnet-preview&preserve-view=true) and [Python](https://docs.microsoft.com/en-us/python/api/overview/azure/ai-language-conversations-readme?view=azure-python-preview&preserve-view=true)| Learn more on how to use the [CLU runtime SDKs and APIs](https://docs.microsoft.com/en-us/rest/api/language/conversation-analysis-runtime). Refactoring will be necessary to use the CLU runtime API response. |
 
-## Migration Steps for your LUIS Applications
-You can choose to migrate your LUIS applications to the next generation service conversational language understanding programmatically using the Authoring APIs or using the LUIS portal.  
-
+## Migrate your LUIS applications using LUIS Portal
 Follow these steps to begin migration using the [LUIS Portal](https://www.luis.ai/): 
 
 1. After logging into luis.ai, click the button on the banner, shown below, to launch the migration wizard or select your LUIS applications from your library and use the migrate button, shown below to begin migrating your applications. Please note that migration will only copy your selected LUIS applications. 
@@ -86,16 +84,35 @@ Follow these steps to begin migration using the [LUIS Portal](https://www.luis.a
    
    * [Call your deployed model](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/how-to/call-api?tabs=language-studio)  
 
-Follow these steps to begin migration programmatically using the CLU Authoring APIs: 
+## Migrate your LUIS applications using REST APIs
+Follow these steps to begin migration programmatically using the CLU Authoring REST APIs: 
 
 1. Export your LUIS application in JSON format. You can use the [LUIS Portal](https://www.luis.ai/) to export your applications or via the LUIS Programmatic APIs.  
 
 2. Import a LUIS application JSON file into Conversational Language Understanding using the CLU authoring REST APIs: 
-### [REST API](#tab/rest-api)
+Submit a POST request using the following URL, headers, and JSON body to import LUIS application into your CLU project.
 
-[!INCLUDE [Import LUIS application](../includes/rest-api/import-LUIS-project.md)]
+### Request URL
+|Http|
+|---|
+|{ENDPOINT}/language/authoring/analyze-conversations/projects/{PROJECT-NAME}/:import?api-version={API-VERSION}&format=luis|
 
----
+|Placeholder | Value | Example|
+|-----|-----|----|
+| {ENDPOINT}	|The endpoint for authenticating your API request.|	https://<your-custom-subdomain>.cognitiveservices.azure.com|
+| {PROJECT-NAME}	|The name for your project. This value is case-sensitive.|	myProject|
+| {API-VERSION} |	The version of the API you are calling. The value referenced here is for the latest released model version released.| 2022-05-01 |
+  
+### Headers
+Use the following header to authenticate your request.
+  
+|Key	|Value|
+|----|----| 
+|Ocp-Apim-Subscription-Key	|The key to your resource. Used for authenticating your API requests.|
+
+### 
+  
+
 
 3. Next steps: 
 
