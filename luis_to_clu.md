@@ -24,19 +24,19 @@ The following table presents a side-by-side comparison between the features of L
 |Entity features| Entity components| List or Prebuilt entities added as features to an entity will be transferred as added components to that entity. [Entity features](https://github.com/hazemelh/playground/blob/main/luis_to_clu.md#16-how-do-entity-features-get-transferred-in-clu) will not be transferred for intents |
 |Intents and utterances| Intents and utterances |All intents and utterances will be transferred; utterances will be labeled with their transferred entities. |
 |Application GUIDs |Project names| A project will be created for each migrating application with the application name. |
-|Versioning| Can only be stored locally, will be available in October 2022 (FAQ7)| A project will be created for the selected application version. |
-|Evaluation using batch testing |Evaluation using testing sets| Uploading your testing dataset will be required.|  
+|Versioning| Can only be stored [locally](https://github.com/hazemelh/playground/blob/main/luis_to_clu.md#7-how-do-i-manage-versions-in-clu), will be available in October 2022 | A project will be created for the selected application version. |
+|Evaluation using batch testing |Evaluation using testing sets| [Uploading your testing dataset](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/how-to/tag-utterances#how-to-label-your-utterances) will be required.|  
 |LUIS Authoring APIs| CLU Authoring APIs| Learn more on how to use the CLU authoring APIs.| 
-|Role-Based Access Control (RBAC) for LUIS resources |Role-Based Access Control (RBAC) available for Language resources |Language resource RBAC must be manually added after migration. Learn more. |
-|Single training mode| Standard and advanced training modes (FAQ14)| Training will be required after application migration. |
+|Role-Based Access Control (RBAC) for LUIS resources |Role-Based Access Control (RBAC) available for Language resources |Language resource RBAC must be manually added after migration. [Learn more.](https://docs.microsoft.com/en-us/azure/role-based-access-control/) |
+|Single training mode| Standard and advanced [training modes](https://github.com/hazemelh/playground/blob/main/luis_to_clu.md#14-how-are-the-training-times-different-in-clu) | Training will be required after application migration. |
 |Two publishing slots and version publishing |Ten deployment slots with custom naming|Deployment will be required after the application’s migration and training. |
-|LUIS Authoring SDK support in .NET, Python, Java, and Node.js |Unavailable| Learn more on how to use the CLU authoring APIs. Refactoring will be necessary to use the CLU authoring APIs. |
-|LUIS Runtime SDK support in .NET, Python, Java, and Node.js |CLU Runtime SDK support in .NET and Python| Learn more on how to use the CLU runtime SDKs and APIs. Refactoring will be necessary to use the CLU runtime API response. |
+|LUIS Authoring SDK support in .NET, Python, Java, and Node.js |Unavailable| Learn more on how to use the [CLU authoring APIs](https://docs.microsoft.com/en-us/rest/api/language/conversational-analysis-authoring). Refactoring will be necessary to use the CLU authoring APIs. |
+|LUIS Runtime SDK support in .NET, Python, Java, and Node.js |CLU Runtime SDK support in [.NET](https://docs.microsoft.com/en-us/dotnet/api/overview/azure/ai.language.conversations-readme-pre?view=azure-dotnet-preview&preserve-view=true) and [Python](https://docs.microsoft.com/en-us/python/api/overview/azure/ai-language-conversations-readme?view=azure-python-preview&preserve-view=true)| Learn more on how to use the [CLU runtime SDKs and APIs](https://docs.microsoft.com/en-us/rest/api/language/conversation-analysis-runtime). Refactoring will be necessary to use the CLU runtime API response. |
 
 ## Migration Steps for your LUIS Applications
 You can choose to migrate your LUIS applications to the next generation service conversational language understanding programmatically using the Authoring APIs or using the LUIS portal.  
 
-Follow these steps to begin migration using the LUIS Portal: 
+Follow these steps to begin migration using the [LUIS Portal](https://www.luis.ai/): 
 
 1. After logging into luis.ai, click the button on the banner, shown below, to launch the migration wizard or select your LUIS applications from your library and use the migrate button, shown below to begin migrating your applications. Please note that migration will only copy your selected LUIS applications. 
 
@@ -80,15 +80,15 @@ Follow these steps to begin migration using the LUIS Portal:
 
 8. Next steps: 
 
-   * Train your model 
+   * [Train your model](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/how-to/train-model?tabs=language-studio) 
    
-   * Deploy your model 
+   * [Deploy your model](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/how-to/deploy-model?tabs=language-studio) 
    
-   * Call your deployed model  
+   * [Call your deployed model](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/how-to/call-api?tabs=language-studio)  
 
 Follow these steps to begin migration programmatically using the CLU Authoring APIs: 
 
-1. Export your LUIS application in JSON format. You can use the LUIS Portal to export your applications or via the LUIS Programmatic APIs.  
+1. Export your LUIS application in JSON format. You can use the [LUIS Portal](https://www.luis.ai/) to export your applications or via the LUIS Programmatic APIs.  
 
 2. Import a LUIS application JSON file into Conversational Language Understanding using the CLU authoring REST APIs: 
 ### [REST API](#tab/rest-api)
@@ -99,16 +99,14 @@ Follow these steps to begin migration programmatically using the CLU Authoring A
 
 3. Next steps: 
 
-   * Train your model 
-
-   * Deploy your model 
-
-   * Call your deployed model 
+   * [Train your model](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/how-to/train-model?tabs=language-studio) 
+   
+   * [Deploy your model](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/how-to/deploy-model?tabs=language-studio) 
+   
+   * [Call your deployed model](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/how-to/call-api?tabs=language-studio)  
 
 ## Frequently asked questions
-
    
-
 ### 1. Which LUIS JSON version is supported by CLU? 
 
 CLU supports the model JSON version 7.0.0, therefore if the JSON format is older, it would need to be imported then exported from LUIS with the most recent version.  
