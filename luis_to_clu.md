@@ -39,22 +39,49 @@ You can choose to migrate your LUIS applications to the next generation service 
 Follow these steps to begin migration using the LUIS Portal: 
 
 1. After logging into luis.ai, click the button on the banner, shown below, to launch the migration wizard or select your LUIS applications from your library and use the migrate button, shown below to begin migrating your applications. Please note that migration will only copy your selected LUIS applications. 
-![Migration banner](https://github.com/hazemelh/playground/blob/main/banner.jpg)
-![Migration button from LUIS portal](https://github.com/hazemelh/playground/blob/main/migrate%20button.jpg)
 
+
+![Migration banner](https://github.com/hazemelh/playground/blob/main/banner.jpg)
+
+
+![Migration button from LUIS portal](https://github.com/hazemelh/playground/blob/main/migrate%20button.jpg)
 
 
 2. The migration overview tab, shown below, provides a brief explanation of conversational language understanding and its benefits. Press Next to proceed.  
 
+
+![Migration overview](https://github.com/hazemelh/playground/blob/main/migration%20overview.jpg)
+
+
 3. The next step is to determine the Language resource that you wish to migrate your LUIS application to. If you have already created your Language resource, proceed by first selecting your Azure subscription followed by your Language resource and then press Next, highlighted in the figure below. If you have not previously created your Language resource, click the link to Create a new Language resource, follow the guide. Afterwards, select your options as previously mentioned then press Next. 
 
+
+![Select language resource](https://github.com/hazemelh/playground/blob/main/select%20language%20resource.jpg)
+
+
 4. Select all your LUIS applications that you wish to migrate as well as specify each of their versions and then press Next. Note that if any of your LUIS application names are not supported by Conversational language understanding, you will be prompted to change them. After selecting your application and version, you will be prompted with a message informing you of any features your LUIS application has that will not be carried over, as shown in the figure below. 
+
+
+![Select LUIS applications](https://github.com/hazemelh/playground/blob/main/select%20luis%20applications.jpg)
+
+
 5. Once you have completed all the steps (1-4), you can review your Language resource and LUIS applications selections. Press Finish and migrate once you have completed your review. 
-6. A popup window, shown below, will allow you to track the migration status of your applications. Applications that have not started migrating will have a status of “Not started”. Applications that have begun migrating will have a status of “In progress” and once they have finished migrating their status will be converted to “Succeeded”. An application status that returns “Failed” means that you must repeat its migration process following steps (1-5). Once the migration has completed for all applications, press Done to move on to Next Steps. 
-7. Next steps: 
- a.Train your model 
- b.Deploy your model 
- c.Call your deployed model  
+
+
+![Review and finish](https://github.com/hazemelh/playground/blob/main/review%20and%20finish.jpg)
+
+
+7. A popup window, shown below, will allow you to track the migration status of your applications. Applications that have not started migrating will have a status of “Not started”. Applications that have begun migrating will have a status of “In progress” and once they have finished migrating their status will be converted to “Succeeded”. An application status that returns “Failed” means that you must repeat its migration process following steps (1-5). Once the migration has completed for all applications, press Done to move on to Next Steps.
+
+
+![Migrating applications](https://github.com/hazemelh/playground/blob/main/migrating%20applications.jpg)
+
+
+
+8. Next steps: 
+   a.Train your model 
+   b.Deploy your model 
+   c.Call your deployed model  
 
 Follow these steps to begin migration programmatically using the CLU Authoring APIs: 
 
