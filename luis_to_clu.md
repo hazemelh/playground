@@ -1,27 +1,27 @@
 # Migration from Language Understanding (LUIS) to conversational language understanding (CLU)
 ## Executive Summary
-[Conversational Language Understanding (CLU)]() is one of the cloud-based API services offered by Azure Cognitive Services for Language. It is the newest generation of [Language Understanding Service (LUIS)]() and therefore offers backwards compatibility with previously created LUIS applications. CLU employs state-of-the-art machine-learning intelligence to allow users to build a custom natural language understanding model for the prediction of intents and entities of conversational utterances. 
+[Conversational Language Understanding (CLU)](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/overview) is one of the cloud-based API services offered by Azure Cognitive Services for Language. It is the newest generation of [Language Understanding Service (LUIS)](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/what-is-luis) and therefore offers backwards compatibility with previously created LUIS applications. CLU employs state-of-the-art machine-learning intelligence to allow users to build a custom natural language understanding model for the prediction of intents and entities of conversational utterances. 
 
 CLU offers the following advantages over LUIS: 
 
 1. Improved accuracy with state-of-the-art machine learning models for better intent classification and entity extraction. 
 2. Multilingual support for model learning and training. 
-3. Ease of integration with different CLU and [custom question answering]() projects using [orchestration workflow](), available on the [Language Studio](). 
+3. Ease of integration with different CLU and [custom question answering](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/question-answering/overview) projects using [orchestration workflow](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/orchestration-workflow/overview), available on the [Language Studio](https://language.cognitive.azure.com/home). 
 4. The ability to add testing data easily within the experience using the Language Studio and APIs for model performance evaluation prior to deployment. 
 
-To get started you can [create a new project]() or [import your LUIS application](). 
+To get started you can [create a new project](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/quickstart?pivots=language-studio#create-a-conversational-language-understanding-project) or [migrate your LUIS application](https://github.com/hazemelh/playground/blob/main/luis_to_clu.md#migration-steps-for-your-luis-applications). 
 
 ## Comparison between Language Understanding (LUIS) and conversational language understanding (CLU)
-The following table presents a side-by-side comparison between the features of LUIS and CLU; additionally, it highlights the changes to your LUIS application after migrating to CLU.
+The following table presents a side-by-side comparison between the features of LUIS and CLU; additionally, it highlights the changes to your LUIS application after migrating to CLU. You may click on the highlighted concept to learn more about the changes.
 
 |LUIS features | Conversational language understanding features | Post migration |
 |:------------:|:----------------------------------------------:|:--------------:|
-|ML, Structured ML, List, Prebuilt, Regex, Pattern.Any Entities|ML, List, and Prebuilt [entity components](faq2). Regex components to be available in October 2022.|ML (leaf nodes), List, and Prebuilt entities will be transferred as entities in CLU; other entity types will not be transferred.| 
-|Single culture for each application|Multilingual model: multiple languages for each project (FAQ4)|The primary language of your project will be set as your LUIS application culture. Your project can be trained to extend to different languages.|
-|Entity Roles  |Roles no longer needed (FAQ3)  | Entity Roles will be transferred as entities.|
-|Normalize Punctuation, Normalize Diacritics, Normalize Word Form, Use All Training Data  |Settings no longer needed (FAQ6)  |Settings will not be transferred.  |
-|Patterns and Phrase list features|Patterns and Phrase list features no longer needed. (FAQ6)|Patterns and Phrase list features will not be transferred.  |
-|Entity features| Entity components (FAQ16)| List or Prebuilt entities added as features to an entity will be transferred as added components to that entity. Entity features will not be transferred for intents |
+|ML, Structured ML, List, Prebuilt, Regex, Pattern.Any Entities|ML, List, and Prebuilt [entity components]([faq2](https://github.com/hazemelh/playground/blob/main/luis_to_clu.md#2-how-are-entities-different-in-clu)). Regex components to be available in October 2022.|[ML (leaf nodes)](https://github.com/hazemelh/playground/blob/main/luis_to_clu.md#15-how-can-i-link-sub-entities-to-parent-entities-from-my-luis-application-in-clu), List, and Prebuilt entities will be transferred as entities in CLU; other entity types will not be transferred.| 
+|Single culture for each application|[Multilingual model](https://github.com/hazemelh/playground/blob/main/luis_to_clu.md#4-how-is-conversational-language-understanding-multilingual): multiple languages for each project|The primary language of your project will be set as your LUIS application culture. Your project can be trained to extend to different languages.|
+|Entity Roles  |[Roles](https://github.com/hazemelh/playground/blob/main/luis_to_clu.md#3-how-are-entity-roles-transferred-to-clu) no longer needed | Entity Roles will be transferred as entities.|
+|Normalize Punctuation, Normalize Diacritics, Normalize Word Form, Use All Training Data  |[Settings](https://github.com/hazemelh/playground/blob/main/luis_to_clu.md#6-how-is-the-accuracy-of-clu-better-than-luis) no longer needed |Settings will not be transferred.  |
+|Patterns and Phrase list features|[Patterns and Phrase list features](https://github.com/hazemelh/playground/blob/main/luis_to_clu.md#6-how-is-the-accuracy-of-clu-better-than-luis) no longer needed. |Patterns and Phrase list features will not be transferred.  |
+|Entity features| Entity components| List or Prebuilt entities added as features to an entity will be transferred as added components to that entity. [Entity features](https://github.com/hazemelh/playground/blob/main/luis_to_clu.md#16-how-do-entity-features-get-transferred-in-clu) will not be transferred for intents |
 |Intents and utterances| Intents and utterances |All intents and utterances will be transferred; utterances will be labeled with their transferred entities. |
 |Application GUIDs |Project names| A project will be created for each migrating application with the application name. |
 |Versioning| Can only be stored locally, will be available in October 2022 (FAQ7)| A project will be created for the selected application version. |
