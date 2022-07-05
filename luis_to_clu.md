@@ -80,11 +80,11 @@ Follow these steps to begin migration using the LUIS Portal:
 
 8. Next steps: 
 
-   a.Train your model 
+   * Train your model 
    
-   b.Deploy your model 
+   * Deploy your model 
    
-   c.Call your deployed model  
+   * Call your deployed model  
 
 Follow these steps to begin migration programmatically using the CLU Authoring APIs: 
 
@@ -99,13 +99,13 @@ Follow these steps to begin migration programmatically using the CLU Authoring A
 
 3. Next steps: 
 
-1. Train your model 
+   * Train your model 
 
-2. Deploy your model 
+   * Deploy your model 
 
-3. Call your deployed model 
+   * Call your deployed model 
 
-## FAQ: Frequently asked questions 
+## Frequently asked questions
 
    
 
@@ -119,29 +119,29 @@ In CLU, a single entity can have multiple entity components which are different 
 
 After migrating, your structured ML leaf nodes, bottom-level sub-entities, will be transferred over to the new CLU model while all the parent entities, higher-level entities, will be ignored. The name of the entity will be the bottom-level entity’s name concatenated with its parent entity. 
 
-Example: 
+####Example: 
 
 LUIS entity: 
 
 *Pizza Order  
 
-**Topping  
+  **Topping  
 
-**Size  
+  **Size  
 
 Migrated LUIS entity in CLU: 
 
-Pizza Order.Topping 
+*Pizza Order.Topping 
 
-Pizza Order.Size 
+*Pizza Order.Size 
 
  
 
-How are entity roles transferred to CLU? 
+### 3. How are entity roles transferred to CLU? 
 
 Your roles will be transferred as distinct entities along with their labeled utterances; each role’s entity type will determine which entity component will be populated. For example, a list entity role will be transferred as an entity with the same name as the role, with a populated list component. 
 
-How is conversational language understanding multilingual? 
+### 4. How is conversational language understanding multilingual? 
 
 Conversational language understanding projects accept utterances in different languages. Furthermore, you can train your model in one language and extend it to predict in other languages.  
 
@@ -155,13 +155,11 @@ Runtime utterance (French): Comment ça va?
 
 Predicted intent: Greeting 
 
- 
-
-How are entity confidence scores different in CLU? 
+### 5. How are entity confidence scores different in CLU? 
 
 Any extracted entity has a 100% confidence score and therefore entity confidence scores should not be used to make decisions between entities.  
 
-How is the accuracy of CLU better than LUIS? 
+### 6. How is the accuracy of CLU better than LUIS? 
 
 CLU uses state-of-the-art models to enhance the ML performance of the different models of intent classification and entity extraction. 
 
@@ -169,31 +167,31 @@ These models are insensitive to minor variations which removes the need for Norm
 
 Additionally, the new models do not support phrase list features as they no longer require supplementary information from the user to provide semantically similar words for better accuracy. 
 
-How do I manage versions in CLU? 
+### 7. How do I manage versions in CLU? 
 
 Although CLU does not offer versioning, you can export your CLU projects using the Language Studio or programmatically and store different versions of the assets locally. Versioning will be coming to CLU in October 2022. 
 
-Why is CLU classification different from LUIS? How does None classification work? 
+### 8. Why is CLU classification different from LUIS? How does None classification work? 
 
 CLU presents a different approach to training the models where it uses multi-classification as opposed to binary classification. As a result, the interpretation of the scores is different and also differs across the training options. While you are likely to achieve better results, you have to observe the difference in scores and determine a new threshold for accepting the intent predictions. You can easily add a confidence score threshold for None in your project settings. This will return the top intent as None if the top intent did not exceed the confidence score threshold provided. 
 
-Do I need more data for CLU models than LUIS? 
+### 9. Do I need more data for CLU models than LUIS? 
 
 The new CLU models have better semantic understanding of language than in LUIS, and in turn would help make models generalize with a significant reduction of data. While you shouldn’t be aiming to reduce the amount of data that you have, you should, however, expect better performance and resilience to variations and synonyms in CLU compared to LUIS. 
 
-If I don’t migrate my apps, will they be deleted? 
+### 10. If I don’t migrate my LUIS apps, will they be deleted? 
 
-Microsoft is committed to providing continual support for your existing LUIS applications until 31 August 2022, but you will not be able to create new resources from 1 March 2023. 
+Microsoft is committed to providing continual support for your existing LUIS applications until 31 August 2022, but you will not be able to create new LUIS resources from 1 March 2023. 
 
-Are .LU files supported on CLU? 
+### 11. Are .LU files supported on CLU? 
 
 Only JSON format is supported by CLU. You can import your .LU files to LUIS and export them in JSON format or you can follow the previously mentioned migration steps for your application. 
 
-What are the service limits of CLU? 
+### 12. What are the service limits of CLU? 
 
 CLU limitations can be found here. 
 
-Do I have to refactor my code if I migrate my applications from LUIS to CLU? 
+### 13. Do I have to refactor my code if I migrate my applications from LUIS to CLU? 
 
 The API objects of CLU applications are different from LUIS and therefore code refactoring will be necessary.  
 
@@ -205,11 +203,11 @@ CLU runtime APIs: The new API request and response includes a lot of the same pa
 
 You can use the .NET or Python CLU Runtime SDK to replace the LUIS Runtime SDK. There is currently no authoring SDK available for CLU. 
 
-How are the training times different in CLU? 
+### 14. How are the training times different in CLU? 
 
 CLU offers Standard Training which trains and learns in English in a short duration that is comparable to the training time of LUIS. It also offers Advanced Training which takes a considerably longer duration as it extends the training to all other supported languages. 
 
-How can I link sub-entities to parent entities from my LUIS application in CLU? 
+### 15. How can I link sub-entities to parent entities from my LUIS application in CLU? 
 
 One simple way to implement the concept of sub-entities in CLU is to combine the sub-entities into different entity components within the same entity.  
 
@@ -217,49 +215,29 @@ Example:
 
 LUIS Implementation: 
 
-Pizza Order (entity)  
+* Pizza Order (entity)  
 
-Size (sub-entity) 
+   * Size (sub-entity) 
 
-Quantity (sub-entity) 
+   * Quantity (sub-entity) 
 
 CLU Implementation: 
 
-Pizza Order (entity) 
+* Pizza Order (entity) 
 
-Size (list entity component: small, medium, large) 
+   * Size (list entity component: small, medium, large) 
 
-Quantity (prebuilt entity component: number) 
+   * Quantity (prebuilt entity component: number) 
 
 In CLU, you would label the entire span for Pizza Order inclusive of the size and quantity, which would return the Pizza Order with a list key for Size, and a number value for Quantity in the same entity object. 
 
 For more complex problems where entities contain several levels of depth, you can create a project for each couple of levels of depth in the entity structure. This gives you the option to pass the utterance to each project and combine the analyses of each and combine them in the stage proceeding CLU.  
 
-How do entity features get transferred in CLU? 
+### 16. How do entity features get transferred in CLU? 
 
 Entities used as features to intents will not be transferred. Entities used as features for other entities will populate the relevant component of the entity. For example, if a list entity SizeList was used as a feature to a machine-learned entity Size, then the Size entity will be transferred to CLU with the list values from SizeList added to its list component. 
 
+## Migration from LUIS Q&A
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+If you have any questions that were unanswered in this article be sure leave your questions at our [Q&A]() thread. 
 
