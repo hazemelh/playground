@@ -45,9 +45,9 @@ Follow these steps to begin migration using the LUIS Portal:
 5. Once you have completed all the steps (1-4), you can review your Language resource and LUIS applications selections. Press Finish and migrate once you have completed your review. 
 6. A popup window, shown below, will allow you to track the migration status of your applications. Applications that have not started migrating will have a status of “Not started”. Applications that have begun migrating will have a status of “In progress” and once they have finished migrating their status will be converted to “Succeeded”. An application status that returns “Failed” means that you must repeat its migration process following steps (1-5). Once the migration has completed for all applications, press Done to move on to Next Steps. 
 7. Next steps: 
-a.Train your model 
-b.Deploy your model 
-c.Call your deployed model  
+ a.Train your model 
+ b.Deploy your model 
+ c.Call your deployed model  
 
 Follow these steps to begin migration programmatically using the CLU Authoring APIs: 
 
