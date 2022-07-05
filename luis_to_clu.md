@@ -123,9 +123,9 @@ LUIS entity:
 
 * Pizza Order  
 
-  ** Topping  
+   * Topping  
 
-  ** Size  
+   * Size  
 
 Migrated LUIS entity in CLU: 
 
