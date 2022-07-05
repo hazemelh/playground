@@ -113,7 +113,7 @@ Use the following header to authenticate your request.
 Use the following sample JSON as your body.
 
 |JSON|
-|---|
+|----|
 |{
   "api-version":"{API-VERSION}" ,
    "stringIndexType": "Utf16CodeUnit",
@@ -165,8 +165,8 @@ Use the following sample JSON as your body.
       }
     ]
   }
-}
-|
+}|
+
 
 |Key	|Placeholder | Value	|Example|
 |----|----|----|-----|
