@@ -187,7 +187,7 @@ CLU uses state-of-the-art models to enhance the ML performance of the different 
 
 These models are insensitive to minor variations which removes the need for Normalize Punctuation, Normalize Diacritics, Normalize Word Form and Use All Training Data settings.  
 
-Additionally, the new models do not support phrase list features as they no longer require supplementary information from the user to provide semantically similar words for better accuracy. 
+Additionally, the new models do not support phrase list features as they no longer require supplementary information from the user to provide semantically similar words for better accuracy. Patterns were also used to provide improved intent classification using rule-based matching techniques that are not necessary in the new model paradigm.
 
 ### 7. How do I manage versions in CLU? 
 
