@@ -39,6 +39,8 @@ You can choose to migrate your LUIS applications to the next generation service 
 Follow these steps to begin migration using the LUIS Portal: 
 
 1. After logging into luis.ai, click the button on the banner, shown below, to launch the migration wizard or select your LUIS applications from your library and use the migrate button, shown below to begin migrating your applications. Please note that migration will only copy your selected LUIS applications. 
+![Migration banner](https://github.com/hazemelh/playground/blob/main/banner.jpg)
+![Migration button from LUIS portal](https://github.com/hazemelh/playground/blob/main/migrate%20button.jpg)
 
 
 
