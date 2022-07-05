@@ -12,7 +12,7 @@ CLU offers the following advantages over LUIS:
 To get started you can [create a new project](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/quickstart?pivots=language-studio#create-a-conversational-language-understanding-project) or [migrate your LUIS application](https://github.com/hazemelh/playground/blob/main/luis_to_clu.md#migration-steps-for-your-luis-applications). 
 
 ## Comparison between Language Understanding (LUIS) and conversational language understanding (CLU)
-The following table presents a side-by-side comparison between the features of LUIS and CLU; additionally, it highlights the changes to your LUIS application after migrating to CLU. You may click on the highlighted concept to learn more about the changes.
+The following table presents a side-by-side comparison between the features of LUIS and CLU; additionally, it highlights the changes to your LUIS application after migrating to CLU. You may click on the linked concept to learn more about the changes.
 
 |LUIS features | Conversational language understanding features | Post migration |
 |:------------:|:----------------------------------------------:|:--------------:|
