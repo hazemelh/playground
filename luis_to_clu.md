@@ -89,8 +89,7 @@ Follow these steps to begin migration programmatically using the CLU Authoring R
 
 1. Export your LUIS application in JSON format. You can use the [LUIS Portal](https://www.luis.ai/) to export your applications or via the LUIS Programmatic APIs.  
 
-2. Import a LUIS application JSON file into Conversational Language Understanding using the CLU authoring REST APIs: 
-Submit a POST request using the following URL, headers, and JSON body to import LUIS application into your CLU project.
+2. Import your LUIS application by submitting a POST request using the following URL, headers, and JSON body to import LUIS application into your CLU project.
 
 ### Request URL
 |Http|
@@ -110,12 +109,74 @@ Use the following header to authenticate your request.
 |----|----| 
 |Ocp-Apim-Subscription-Key	|The key to your resource. Used for authenticating your API requests.|
 
-### 
-  
+### Body
+Use the following sample JSON as your body.
 
+|JSON|
+|---|
+|{
+  "api-version":"{API-VERSION}" ,
+   "stringIndexType": "Utf16CodeUnit",
+    "metadata": {
+        "projectKind": "conversation",
+        "settings": {
+            "confidenceThreshold": 0.7
+        },
+        "projectName": "{PROJECT-NAME}",
+        "multilingual": true,
+        "description": "Importing LUIS into CLU",
+        "language": "{LANGUAGE-CODE}"
+    },
+  "assets": {
+     "projectKind": "luis",
+    "intents": [
+      {
+        "category": "Read"
+      },
+      {
+        "category": "Delete"
+      }
+    ],
+    "entities": [
+      {
+        "category": "Sender"
+      }
+    ],
+    "utterances": [
+      {
+        "text": "Open Blake's email",
+        "language": "{LANGUAGE-CODE}",
+        "dataset": "{DATASET}",
+        "intent": "Read",
+        "entities": [
+          {
+            "category": "Sender",
+            "offset": 5,
+            "length": 5
+          }
+        ]
+      },
+      {
+        "text": "Delete last email",
+        "language": "{LANGUAGE-CODE}",
+        "dataset": "{DATASET}",
+        "intent": "Attach",
+        "entities": []
+      }
+    ]
+  }
+}
+|
+
+|Key	|Placeholder | Value	|Example|
+|----|----|----|-----|
+|api-version|	{API-VERSION}	|The version of the API you are calling. The version used here must be the same API version in the URL.|	2022-05-01|
+|projectName|	{PROJECT-NAME}	|The name of your project. This value is case-sensitive.|	EmailApp|
+|language	|{LANGUAGE-CODE}	|A string specifying the language code for the utterances used in your project. If your project is a multilingual project, choose the language code of the majority of the utterances.|	en-us|
+|multilingual|	true|	A boolean value that enables you to have documents in multiple languages in your dataset and when your model is deployed you can query the model in any supported language; not necessarily a language included in your training documents.|	true|
+|dataset	|{DATASET}	|See how to train a model for information on splitting your data between a testing and training set. Possible values for this field are Train and Test.|	Train|
 
 3. Next steps: 
-
    * [Train your model](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/how-to/train-model?tabs=language-studio) 
    
    * [Deploy your model](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/how-to/deploy-model?tabs=language-studio) 
