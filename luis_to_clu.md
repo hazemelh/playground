@@ -119,21 +119,21 @@ In CLU, a single entity can have multiple entity components which are different 
 
 After migrating, your structured ML leaf nodes, bottom-level sub-entities, will be transferred over to the new CLU model while all the parent entities, higher-level entities, will be ignored. The name of the entity will be the bottom-level entity’s name concatenated with its parent entity. 
 
-####Example: 
+#### Example: 
 
 LUIS entity: 
 
-*Pizza Order  
+* Pizza Order  
 
-  **Topping  
+  ** Topping  
 
-  **Size  
+  ** Size  
 
 Migrated LUIS entity in CLU: 
 
-*Pizza Order.Topping 
+* Pizza Order.Topping 
 
-*Pizza Order.Size 
+* Pizza Order.Size 
 
  
 
@@ -145,7 +145,7 @@ Your roles will be transferred as distinct entities along with their labeled utt
 
 Conversational language understanding projects accept utterances in different languages. Furthermore, you can train your model in one language and extend it to predict in other languages.  
 
-Example:  
+#### Example:  
 
 Training utterance (English):  How are you? 
 
@@ -211,7 +211,7 @@ CLU offers Standard Training which trains and learns in English in a short durat
 
 One simple way to implement the concept of sub-entities in CLU is to combine the sub-entities into different entity components within the same entity.  
 
-Example: 
+#### Example: 
 
 LUIS Implementation: 
 
