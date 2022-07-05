@@ -1,5 +1,5 @@
 # Migration from Language Understanding (LUIS) to conversational language understanding (CLU)
-## Executive Summary
+## Overview
 [Conversational Language Understanding (CLU)](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/overview) is one of the cloud-based API services offered by Azure Cognitive Services for Language. It is the newest generation of [Language Understanding Service (LUIS)](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/what-is-luis) and therefore offers backwards compatibility with previously created LUIS applications. CLU employs state-of-the-art machine-learning intelligence to allow users to build a custom natural language understanding model for the prediction of intents and entities of conversational utterances. 
 
 CLU offers the following advantages over LUIS: 
@@ -133,8 +133,6 @@ Migrated LUIS entity in CLU:
 
 * Pizza Order.Size 
 
- 
-
 ### 3. How are entity roles transferred to CLU? 
 
 Your roles will be transferred as distinct entities along with their labeled utterances; each role’s entity type will determine which entity component will be populated. For example, a list entity role will be transferred as an entity with the same name as the role, with a populated list component. 
@@ -167,11 +165,11 @@ Additionally, the new models do not support phrase list features as they no long
 
 ### 7. How do I manage versions in CLU? 
 
-Although CLU does not offer versioning, you can export your CLU projects using the Language Studio or programmatically and store different versions of the assets locally. Versioning will be coming to CLU in October 2022. 
+Although CLU does not offer versioning, you can export your CLU projects using the [Language Studio](https://language.cognitive.azure.com/home) or [programmatically](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/how-to/fail-over#export-your-primary-project-assets) and store different versions of the assets locally. Versioning will be coming to CLU in October 2022. 
 
 ### 8. Why is CLU classification different from LUIS? How does None classification work? 
 
-CLU presents a different approach to training the models where it uses multi-classification as opposed to binary classification. As a result, the interpretation of the scores is different and also differs across the training options. While you are likely to achieve better results, you have to observe the difference in scores and determine a new threshold for accepting the intent predictions. You can easily add a confidence score threshold for None in your project settings. This will return the top intent as None if the top intent did not exceed the confidence score threshold provided. 
+CLU presents a different approach to training the models where it uses multi-classification as opposed to binary classification. As a result, the interpretation of the scores is different and also differs across the training options. While you are likely to achieve better results, you have to observe the difference in scores and determine a new threshold for accepting the intent predictions. You can easily add a confidence score threshold for [None](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/concepts/none-intent) in your project settings. This will return the top intent as None if the top intent did not exceed the confidence score threshold provided. 
 
 ### 9. Do I need more data for CLU models than LUIS? 
 
@@ -187,19 +185,19 @@ Only JSON format is supported by CLU. You can import your .LU files to LUIS and 
 
 ### 12. What are the service limits of CLU? 
 
-CLU limitations can be found here. 
+CLU limitations can be found [here](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/service-limits). 
 
 ### 13. Do I have to refactor my code if I migrate my applications from LUIS to CLU? 
 
 The API objects of CLU applications are different from LUIS and therefore code refactoring will be necessary.  
 
-If you are using the LUIS Programmatic and Runtime APIs, you can easily replace them with their equivalent APIs. 
+If you are using the LUIS [Programmatic](https://westus.dev.cognitive.microsoft.com/docs/services/luis-programmatic-apis-v3-0-preview/operations/5890b47c39e2bb052c5b9c40) and [Runtime](https://westus.dev.cognitive.microsoft.com/docs/services/luis-endpoint-api-v3-0/operations/5cb0a9459a1fe8fa44c28dd8) APIs, you can easily replace them with their equivalent APIs. 
 
-CLU authoring APIs: Note that as opposed to specific CRUD APIs available in LUIS for individual actions such as add utterance, delete entity, rename intent, CLU offers an import API that simply replaces the full content of a project using the same name. If your service used LUIS Programmatic APIs to provide a platform for other customers, you must consider this new design paradigm. All other APIs such as listing projects, training, deploying, and deleting are available. APIs such as importing and deploying are asynchronous operations instead of synchronous as they were in LUIS. 
+[CLU authoring APIs](https://docs.microsoft.com/en-us/rest/api/language/conversational-analysis-authoring): Note that as opposed to specific CRUD APIs available in LUIS for individual actions such as add utterance, delete entity, rename intent, CLU offers an [import API](https://docs.microsoft.com/en-us/rest/api/language/conversational-analysis-authoring/import) that simply replaces the full content of a project using the same name. If your service used LUIS Programmatic APIs to provide a platform for other customers, you must consider this new design paradigm. All other APIs such as listing projects, training, deploying, and deleting are available. APIs such as importing and deploying are asynchronous operations instead of synchronous as they were in LUIS. 
 
-CLU runtime APIs: The new API request and response includes a lot of the same parameters such as query, prediction, top intent, intents, entities, and their values. The CLU response object offers a more straight forward approach where entity predictions are provided as they are in the utterance text, and any additional information such as resolution or list keys are provided in extra parameters called extraInformation and resolution. You can learn more about the API response structure here. 
+[CLU runtime APIs](https://docs.microsoft.com/en-us/rest/api/language/conversation-analysis-runtime/analyze-conversation): The new API request and response includes a lot of the same parameters such as query, prediction, top intent, intents, entities, and their values. The CLU response object offers a more straight forward approach where entity predictions are provided as they are in the utterance text, and any additional information such as resolution or list keys are provided in extra parameters called extraInformation and resolution. You can learn more about the [API response structure here](https://docs.microsoft.com/en-us/rest/api/language/conversation-analysis-runtime/analyze-conversation). 
 
-You can use the .NET or Python CLU Runtime SDK to replace the LUIS Runtime SDK. There is currently no authoring SDK available for CLU. 
+You can use the [.NET](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.Language.Conversations_1.0.0-beta.3/sdk/cognitivelanguage/Azure.AI.Language.Conversations/samples/) or [Python](https://github.com/Azure/azure-sdk-for-python/blob/azure-ai-language-conversations_1.1.0b1/sdk/cognitivelanguage/azure-ai-language-conversations/samples/README.md) CLU Runtime SDK to replace the LUIS Runtime SDK. There is currently no authoring SDK available for CLU. 
 
 ### 14. How are the training times different in CLU? 
 
@@ -237,5 +235,5 @@ Entities used as features to intents will not be transferred. Entities used as f
 
 ## Migration from LUIS Q&A
 
-If you have any questions that were unanswered in this article be sure leave your questions at our [Q&A]() thread. 
+If you have any questions that were unanswered in this article be sure leave your questions at our [Q&A](https://aka.ms/luis-migration-qna-thread) thread. 
 
