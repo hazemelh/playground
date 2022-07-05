@@ -114,58 +114,7 @@ Use the following sample JSON as your body.
 
 |JSON|
 |----|
-|{
-  "api-version":"{API-VERSION}" ,
-   "stringIndexType": "Utf16CodeUnit",
-    "metadata": {
-        "projectKind": "conversation",
-        "settings": {
-            "confidenceThreshold": 0.7
-        },
-        "projectName": "{PROJECT-NAME}",
-        "multilingual": true,
-        "description": "Importing LUIS into CLU",
-        "language": "{LANGUAGE-CODE}"
-    },
-  "assets": {
-     "projectKind": "luis",
-    "intents": [
-      {
-        "category": "Read"
-      },
-      {
-        "category": "Delete"
-      }
-    ],
-    "entities": [
-      {
-        "category": "Sender"
-      }
-    ],
-    "utterances": [
-      {
-        "text": "Open Blake's email",
-        "language": "{LANGUAGE-CODE}",
-        "dataset": "{DATASET}",
-        "intent": "Read",
-        "entities": [
-          {
-            "category": "Sender",
-            "offset": 5,
-            "length": 5
-          }
-        ]
-      },
-      {
-        "text": "Delete last email",
-        "language": "{LANGUAGE-CODE}",
-        "dataset": "{DATASET}",
-        "intent": "Attach",
-        "entities": []
-      }
-    ]
-  }
-}|
+|The exported LUIS JSON data. |
 
 
 |Key	|Placeholder | Value	|Example|
