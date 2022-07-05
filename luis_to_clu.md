@@ -79,8 +79,11 @@ Follow these steps to begin migration using the LUIS Portal:
 
 
 8. Next steps: 
+
    a.Train your model 
+   
    b.Deploy your model 
+   
    c.Call your deployed model  
 
 Follow these steps to begin migration programmatically using the CLU Authoring APIs: 
