@@ -160,6 +160,8 @@ Migrated LUIS entity in CLU:
 * Pizza Order.Topping 
 
 * Pizza Order.Size 
+  
+For more information on entity components, click [here](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/concepts/entity-components).
 
 ### 3. How are entity roles transferred to CLU? 
 
