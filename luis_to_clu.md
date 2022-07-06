@@ -90,7 +90,7 @@ Follow these steps to begin migration programmatically using the CLU Authoring R
 
 1. Export your LUIS application in JSON format. You can use the [LUIS Portal](https://www.luis.ai/) to export your applications or via the [LUIS Programmatic APIs](https://westus.dev.cognitive.microsoft.com/docs/services/luis-programmatic-apis-v3-0-preview/operations/5890b47c39e2bb052c5b9c40).  
 
-2. Import your LUIS application by submitting a POST request using the following URL, headers, and JSON body to import LUIS application into your CLU project.
+2. Import your LUIS application by submitting a POST request using the following URL, headers, and JSON body to import LUIS application into your CLU project. Please note that CLU does not support names with special characters so please remove any special characters from the Project Name.
 
 ### Request URL
 |Http|
