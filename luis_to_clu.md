@@ -25,7 +25,7 @@ The following table presents a side-by-side comparison between the features of L
 |Patterns and Phrase list features|[Patterns and Phrase list features](#6-how-is-the-accuracy-of-clu-better-than-luis) no longer needed. |Patterns and Phrase list features will not be transferred.  |
 |Entity features| Entity components| List or Prebuilt entities added as features to an entity will be transferred as added components to that entity. [Entity features](https://github.com/hazemelh/playground/blob/main/luis_to_clu.md#16-how-do-entity-features-get-transferred-in-clu) will not be transferred for intents |
 |Intents and utterances| Intents and utterances |All intents and utterances will be transferred; utterances will be labeled with their transferred entities. |
-|Application GUIDs |Project names| A project will be created for each migrating application with the application name. |
+|Application GUIDs |Project names| A project will be created for each migrating application with the application name. Any special characters in the application names will be removed in CLU.|
 |Versioning| Can only be stored [locally](https://github.com/hazemelh/playground/blob/main/luis_to_clu.md#7-how-do-i-manage-versions-in-clu), will be available in October 2022 | A project will be created for the selected application version. |
 |Evaluation using batch testing |Evaluation using testing sets| [Uploading your testing dataset](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/how-to/tag-utterances#how-to-label-your-utterances) will be required.|  
 |Role-Based Access Control (RBAC) for LUIS resources |Role-Based Access Control (RBAC) available for Language resources |Language resource RBAC must be manually added after migration. [Learn more.](https://docs.microsoft.com/en-us/azure/role-based-access-control/) |
@@ -58,7 +58,7 @@ Follow these steps to begin migration using the [LUIS Portal](https://www.luis.a
 ![Select language resource](https://github.com/hazemelh/playground/blob/main/select%20language%20resource.jpg)
 
 
-4. Select all your LUIS applications that you wish to migrate as well as specify each of their versions and then press Next. Note that special characters are not supported by Conversational language understanding. If any of your selected LUIS application names contain special characters, you will be prompted to change them. After selecting your application and version, you will be prompted with a message informing you of any features your LUIS application has that will not be carried over, as shown in the figure below. 
+4. Select all your LUIS applications that you wish to migrate as well as specify each of their versions and then press Next. Note that special characters are not supported by Conversational language understanding. Any special characters in your selected LUIS application names will be removed in the newly created CLU applications. After selecting your application and version, you will be prompted with a message informing you of any features your LUIS application has that will not be carried over, as shown in the figure below. 
 
 
 ![Select LUIS applications](https://github.com/hazemelh/playground/blob/main/select%20luis%20applications.jpg)
