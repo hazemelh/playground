@@ -58,7 +58,7 @@ Follow these steps to begin migration using the [LUIS Portal](https://www.luis.a
 ![Select language resource](https://github.com/hazemelh/playground/blob/main/select%20language%20resource.jpg)
 
 
-4. Select all your LUIS applications that you wish to migrate as well as specify each of their versions and then press Next. Note that if any of your LUIS application names are not supported by Conversational language understanding, you will be prompted to change them. After selecting your application and version, you will be prompted with a message informing you of any features your LUIS application has that will not be carried over, as shown in the figure below. 
+4. Select all your LUIS applications that you wish to migrate as well as specify each of their versions and then press Next. Note that special characters are not supported by Conversational language understanding. If any of your selected LUIS application names contain special characters, you will be prompted to change them. After selecting your application and version, you will be prompted with a message informing you of any features your LUIS application has that will not be carried over, as shown in the figure below. 
 
 
 ![Select LUIS applications](https://github.com/hazemelh/playground/blob/main/select%20luis%20applications.jpg)
