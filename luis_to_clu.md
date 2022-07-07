@@ -16,7 +16,7 @@ The following table presents a side-by-side comparison between the features of L
 
 |LUIS features | Conversational language understanding features | Post migration |
 |:------------:|:----------------------------------------------:|:--------------:|
-|ML and Structured ML entities| ML [entity components](#2-how-are-entities-different-in-clu) |Parent entities will be removed. Only ML (leaf nodes) will be transferred as entities in CLU|
+|Machine-learned and Structured ML entities| Learned [entity components](#2-how-are-entities-different-in-clu) |Machine-learned entities without sub-entities will be transferred as CLU entities. Structured ML entities will only transfer leaf nodes (lowest level sub-entities without their own sub-entities) will be transferred as entities in CLU. The name of the entity in CLU will be the name of the sub-entity concatenated with the parent _e.g._ _Order.Size_|
 |List and Prebuilt entities| List and Prebuilt [entity components](#2-how-are-entities-different-in-clu) | List and Prebuilt entities will be tansferred as entities in CLU with a populated entity component based on the entity type.|
 |Regex and Pattern.Any Entities| Regex entities to be available in October 2022 | Pattern.Any entities will be removed. Regex entities will be removed for migrations prior to October 2022.|
 |Single culture for each application|[Multilingual model](#4-how-is-conversational-language-understanding-multilingual): multiple languages for each project|The primary language of your project will be set as your LUIS application culture. Your project can be trained to extend to different languages.|
