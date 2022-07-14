@@ -111,20 +111,7 @@ Use the following header to authenticate your request.
 |`Ocp-Apim-Subscription-Key`| The key to your resource. Used for authenticating your API requests.|
 
 ### Body
-Use the following sample JSON as your body.
-
-```json
-The exported LUIS JSON data. 
-```
-
-
-|Key  |Placeholder  |Value  | Example |
-|---------|---------|----------|--|
-| `api-version` | `{API-VERSION}` | The version of the API you are calling. The version used here must be the same API version in the URL. | `2022-05-01` |
-| `projectName` | `{PROJECT-NAME}` | The name of your project. This value is case-sensitive. | `EmailApp` |
-| `language` | `{LANGUAGE-CODE}` |  A string specifying the language code for the utterances used in your project. If your project is a multilingual project, choose the [language code](../../language-support.md) of the majority of the utterances. |`en-us`|
-| `multilingual` | `true`| A boolean value that enables you to have documents in multiple languages in your dataset and when your model is deployed you can query the model in any [supported language](../../language-support.md); not necessarily a language included in your training documents.  | `true`|
-| `dataset` | `{DATASET}` |  See [how to train a model](../../how-to/tag-utterances.md) for information on splitting your data between a testing and training set. Possible values for this field are `Train` and `Test`.      |`Train`|
+Use the exported LUIS JSON data as your body.
 
 3. Next steps: 
    * [Train your model](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/how-to/train-model?tabs=language-studio) 
