@@ -207,7 +207,7 @@ The new CLU models have better semantic understanding of language than in LUIS, 
 
 ### 10. If I don’t migrate my LUIS apps, will they be deleted? 
 
-Microsoft is committed to providing continual support for your existing LUIS applications until 31 August 2022, but you will not be able to create new LUIS resources from 1 March 2023. 
+Microsoft is committed to providing continual support for your existing LUIS applications until 31 August 2025; then, you will no longer be able to use those applications and the service endpoints will no longer function, and the applications will be permanently deleted. 
 
 ### 11. Are .LU files supported on CLU? 
 
