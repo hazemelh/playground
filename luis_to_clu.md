@@ -93,38 +93,38 @@ Follow these steps to begin migration programmatically using the CLU Authoring R
 2. Import your LUIS application by submitting a POST request using the following URL, headers, and JSON body to import LUIS application into your CLU project. Please note that CLU does not support names with special characters so please remove any special characters from the Project Name.
 
 ### Request URL
-|Http|
-|---|
-|{ENDPOINT}/language/authoring/analyze-conversations/projects/{PROJECT-NAME}/:import?api-version={API-VERSION}&format=luis|
+```rest
+{ENDPOINT}/language/authoring/analyze-conversations/projects/{PROJECT-NAME}/:import?api-version={API-VERSION}&format=luis
+```
 
-|Placeholder | Value | Example|
-|-----|-----|----|
-| {ENDPOINT}	|The endpoint for authenticating your API request.|	https://<your-custom-subdomain>.cognitiveservices.azure.com|
-| {PROJECT-NAME}	|The name for your project. This value is case-sensitive.|	myProject|
-| {API-VERSION} |	The version of the API you are calling. The value referenced here is for the latest released model version released.| 2022-05-01 |
+|Placeholder  |Value  | Example |
+|---------|---------|---------|
+|`{ENDPOINT}`     | The endpoint for authenticating your API request.   | `https://<your-custom-subdomain>.cognitiveservices.azure.com` |
+|`{PROJECT-NAME}`     | The name for your project. This value is case-sensitive.   | `myProject` |
+|`{API-VERSION}`     | The version of the API you are calling. The value referenced here is for the latest released [model version](../../../concepts/model-lifecycle.md#choose-the-model-version-used-on-your-data) released.  | `2022-05-01` |
   
 ### Headers
 Use the following header to authenticate your request.
   
-|Key	|Value|
-|----|----| 
-|Ocp-Apim-Subscription-Key	|The key to your resource. Used for authenticating your API requests.|
+|Key|Value|
+|--|--|
+|`Ocp-Apim-Subscription-Key`| The key to your resource. Used for authenticating your API requests.|
 
 ### Body
 Use the following sample JSON as your body.
 
-|JSON|
-|----|
-|The exported LUIS JSON data. |
+```json
+The exported LUIS JSON data. 
+```
 
 
-|Key	|Placeholder | Value	|Example|
-|----|----|----|-----|
-|api-version|	{API-VERSION}	|The version of the API you are calling. The version used here must be the same API version in the URL.|	2022-05-01|
-|projectName|	{PROJECT-NAME}	|The name of your project. This value is case-sensitive.|	EmailApp|
-|language	|{LANGUAGE-CODE}	|A string specifying the language code for the utterances used in your project. If your project is a multilingual project, choose the language code of the majority of the utterances.|	en-us|
-|multilingual|	true|	A boolean value that enables you to have documents in multiple languages in your dataset and when your model is deployed you can query the model in any supported language; not necessarily a language included in your training documents.|	true|
-|dataset	|{DATASET}	|See how to train a model for information on splitting your data between a testing and training set. Possible values for this field are Train and Test.|	Train|
+|Key  |Placeholder  |Value  | Example |
+|---------|---------|----------|--|
+| `api-version` | `{API-VERSION}` | The version of the API you are calling. The version used here must be the same API version in the URL. | `2022-05-01` |
+| `projectName` | `{PROJECT-NAME}` | The name of your project. This value is case-sensitive. | `EmailApp` |
+| `language` | `{LANGUAGE-CODE}` |  A string specifying the language code for the utterances used in your project. If your project is a multilingual project, choose the [language code](../../language-support.md) of the majority of the utterances. |`en-us`|
+| `multilingual` | `true`| A boolean value that enables you to have documents in multiple languages in your dataset and when your model is deployed you can query the model in any [supported language](../../language-support.md); not necessarily a language included in your training documents.  | `true`|
+| `dataset` | `{DATASET}` |  See [how to train a model](../../how-to/tag-utterances.md) for information on splitting your data between a testing and training set. Possible values for this field are `Train` and `Test`.      |`Train`|
 
 3. Next steps: 
    * [Train your model](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/how-to/train-model?tabs=language-studio) 
