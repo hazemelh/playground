@@ -1,6 +1,6 @@
 # Migration from Language Understanding (LUIS) to conversational language understanding (CLU)
 ## Overview
-[Conversational Language Understanding (CLU)](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/overview) is one of the cloud-based API services offered by Azure Cognitive Services for Language. It is the newest generation of [Language Understanding Service (LUIS)](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/what-is-luis) and therefore offers backwards compatibility with previously created LUIS applications. CLU employs state-of-the-art machine-learning intelligence to allow users to build a custom natural language understanding model for the prediction of intents and entities of conversational utterances. 
+[Conversational language understanding (CLU)](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/overview) is one of the cloud-based API services offered by Azure Cognitive Services for Language. It is the newest generation of [Language Understanding Service (LUIS)](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/what-is-luis) and therefore offers backwards compatibility with previously created LUIS applications. CLU employs state-of-the-art machine-learning intelligence to allow users to build a custom natural language understanding model for the prediction of intents and entities of conversational utterances. 
 
 CLU offers the following advantages over LUIS: 
 
@@ -37,43 +37,40 @@ The following table presents a side-by-side comparison between the features of L
 ## Migrate your LUIS applications using LUIS Portal
 Follow these steps to begin migration using the [LUIS Portal](https://www.luis.ai/): 
 
-1. After logging into luis.ai, click the button on the banner, shown below, to launch the migration wizard or select your LUIS applications from your library and use the migrate button, shown below to begin migrating your applications. Please note that migration will only copy your selected LUIS applications. 
+1. After logging into luis.ai, click the button on the banner, shown below, to launch the migration wizard. Please note that migration will only copy your selected LUIS applications to CLU. 
 
 
-![Migration banner](https://github.com/hazemelh/playground/blob/main/banner.jpg)
-
-
-![Migration button from LUIS portal](https://github.com/hazemelh/playground/blob/main/migrate%20button.jpg)
+![Migration banner](./BannerSVG.svg)
 
 
 2. The migration overview tab, shown below, provides a brief explanation of conversational language understanding and its benefits. Press Next to proceed.  
 
 
-![Migration overview](https://github.com/hazemelh/playground/blob/main/migration%20overview.jpg)
+![Migration overview](./WizardStep1SVG.svg)
 
 
 3. The next step is to determine the Language resource that you wish to migrate your LUIS application to. If you have already created your Language resource, proceed by first selecting your Azure subscription followed by your Language resource and then press Next, highlighted in the figure below. If you have not previously created your Language resource, click the link to Create a new Language resource, follow the guide. Afterwards, select your options as previously mentioned then press Next. 
 
 
-![Select language resource](https://github.com/hazemelh/playground/blob/main/select%20language%20resource.jpg)
+![Select language resource](./WizardStep2SVG.svg)
 
 
 4. Select all your LUIS applications that you wish to migrate as well as specify each of their versions and then press Next. Note that special characters are not supported by Conversational language understanding. Any special characters in your selected LUIS application names will be removed in the newly created CLU applications. After selecting your application and version, you will be prompted with a message informing you of any features your LUIS application has that will not be carried over, as shown in the figure below. 
 
 
-![Select LUIS applications](https://github.com/hazemelh/playground/blob/main/select%20luis%20applications.jpg)
+![Select LUIS applications](./WizardStep3SVG.svg)
 
 
 5. Once you have completed all the steps (1-4), you can review your Language resource and LUIS applications selections. Press Finish and migrate once you have completed your review. 
 
 
-![Review and finish](https://github.com/hazemelh/playground/blob/main/review%20and%20finish.jpg)
+![Review and finish](./WizardStep4SVG.svg)
 
 
 7. A popup window, shown below, will allow you to track the migration status of your applications. Applications that have not started migrating will have a status of “Not started”. Applications that have begun migrating will have a status of “In progress” and once they have finished migrating their status will be converted to “Succeeded”. An application status that returns “Failed” means that you must repeat its migration process following steps (1-5). Once the migration has completed for all applications, press Done to move on to Next Steps.
 
 
-![Migrating applications](https://github.com/hazemelh/playground/blob/main/migrating%20applications.jpg)
+![Migrating applications](./WizardStep5SVG.svg)
 
 
 
