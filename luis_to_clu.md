@@ -249,10 +249,7 @@ Entities used as features to intents will not be transferred. Entities used as f
 
 ### 17. How will my LUIS applications be named in CLU after migration?
 
-Any special characters in the LUIS application name will be removed. If the cleared name length is greater than 50 characters, the extra characters will be removed. If the name after removing special characters is empty (ex: if the LUIS application name was @@), the new name will be untitled. If there is already a conversational language understanding project with the same name, the migrated LUIS application will be appended with "_1" for the first duplicate and increasing by 1 for each additional duplicate.
- 
-
-In case the new name’s length is 50 characters and it needs to be renamed, the last 1 or 2 characters will be removed to be able to concatenate the _count and still be within the 50 characters limit. 
+Any special characters in the LUIS application name will be removed. If the cleared name length is greater than 50 characters, the extra characters will be removed. If the name after removing special characters is empty (ex: if the LUIS application name was @@), the new name will be untitled. If there is already a conversational language understanding project with the same name, the migrated LUIS application will be appended with "_1" for the first duplicate and increasing by 1 for each additional duplicate. In case the new name’s length is 50 characters and it needs to be renamed, the last 1 or 2 characters will be removed to be able to concatenate the _count and still be within the 50 characters limit. 
 
 ## Migration from LUIS Q&A
 
