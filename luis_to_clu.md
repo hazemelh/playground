@@ -121,7 +121,7 @@ Use the exported LUIS JSON data as your body.
    
 ### 1. Which LUIS JSON version is supported by CLU? 
 
-CLU supports the model JSON version 7.0.0, therefore if the JSON format is older, it would need to be imported then exported from LUIS with the most recent version.  
+CLU supports the model JSON version 7.0.0. If the JSON format is older, it would need to be imported first, then exported from LUIS with the most recent version.  
 
 ### 2. How are entities different in CLU? 
 
