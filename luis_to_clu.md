@@ -241,7 +241,7 @@ CLU Implementation:
 
 In CLU, you would label the entire span for Pizza Order inclusive of the size and quantity, which would return the Pizza Order with a list key for Size, and a number value for Quantity in the same entity object. 
 
-For more complex problems where entities contain several levels of depth, you can create a project for each couple of levels of depth in the entity structure. This gives you the option to pass the utterance to each project and combine the analyses of each and combine them in the stage proceeding CLU.  
+For more complex problems where entities contain several levels of depth, you can create a project for each couple of levels of depth in the entity structure. This gives you the option to pass the utterance to each project and combine the analyses of each and combine them in the stage proceeding CLU. For a detailed example on this concept, check out the pizza bot sample available in the samples folder of this [repository](https://github.com/Azure-Samples/cognitive-service-language-samples).
 
 ### 16. How do entity features get transferred in CLU? 
 
