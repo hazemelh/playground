@@ -161,7 +161,7 @@ Training utterance (English):  How are you?
 
 Labeled intent: Greeting 
 
-Runtime utterance (French): Comment ça va? 
+Runtime utterance (French): Comment ça va?  
 
 Predicted intent: Greeting 
 
